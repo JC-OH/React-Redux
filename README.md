@@ -1,6 +1,15 @@
 # Reference
 
-
+> - **store**: React.js 프로젝트에서 사용하는 모든 동적 데이터들을 담아두는 곳 입니다.
+> - **action**: 어떤 변화가 일어나야 할 지 나타내는 객체입니다.
+> - **reducer**: action 객체를 받았을 때, 데이터를 어떻게 바꿀지 처리할지 정의하는 객체입니다.
+## Install Dependencies
+React.js 에서 Redux 를 사용 할 때, 두가지의 의존 모듈이 사용됩니다.
+- **redux**
+- **react-redux**: React.js 프로젝트에서 Redux 를 더 편하게 사용 할 수 있게 해줍니다.
+```angular2
+npm install --save redux react-redux
+```
 # Manual
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
