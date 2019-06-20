@@ -19,6 +19,11 @@ npm install --save redux react-redux
 - INCREMENT
 - DECREMENT
 - SET_COLOR
+```angular2
+export const INCREMENT = "INCREMENT";
+export const DECREMENT = "DECREMENT";
+export const SET_COLOR = "SET_COLOR";
+```
 
 ## Reducer (reducers/counter.js)
 변화를 일으키는 함수 -> **순수**해야함.
