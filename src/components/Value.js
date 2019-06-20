@@ -8,7 +8,7 @@ class Value extends Component {
     }
 
     static defaultProps = {
-        number: -1
+        number: 0
     }
 
     render() {

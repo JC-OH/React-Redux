@@ -4,7 +4,9 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import { createStore } from 'redux';
 import reducers from './reducers';
-import * as actions from './actions';
+import { Provider } from 'react-redux';
+
+//import * as actions from './actions';
 
 const store = createStore(reducers);
 
@@ -20,6 +22,8 @@ const store = createStore(reducers);
 // unsubscribe();
 
 ReactDOM.render(
-    <App/>,
+    <Provider store={store}>
+        <App/>
+    </Provider>,
     document.getElementById('root')
 )
