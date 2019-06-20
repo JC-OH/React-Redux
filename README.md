@@ -10,6 +10,29 @@ React.js 에서 Redux 를 사용 할 때, 두가지의 의존 모듈이 사용�
 ```angular2
 npm install --save redux react-redux
 ```
+## Actions (actions/index.js)
+- 값을 증가 시키기 increment() return {type: "INCREMENT"}
+- 값을 감소 시키디 decrement() return {type: "DECREMENT"}
+- 새로운 색상 설정하기 setColor(color) return {type: "SET_COLOR", color: [200,200,200]}
+
+### Action Types (actions/ActionTypes.js)
+- INCREMENT
+- DECREMENT
+- SET_COLOR
+
+## Reducer (reducers/counter.js)
+변화를 일으키는 함수 -> **순수**해야함.
+**이전 상태**와 **액션**을 받아서 **다음 상태**를 반환한다. 
+
+이전 상태를 변경하는게 아님. 그저 새로운 상태를 반환하는 것! -> 기존 상태를 복사하고, 변화를 준다음에 반환.
+```angular2
+(previousState, action) => newState
+```
+> - 비동기 작업 X
+> - 인수 변겨 X
+> - 동일한 인수 = 동일한 결과
+
+
 # Manual
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
