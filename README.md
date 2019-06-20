@@ -37,6 +37,55 @@ export const SET_COLOR = "SET_COLOR";
 > - 인수 변겨 X
 > - 동일한 인수 = 동일한 결과
 
+## Store (index.js)
+어플리케이션의 현재 상태를 지니고 있음.
+
+Store를 생성하기 위해서는 **createStore** 함수를 호출함.
+
+```angular2
+import { createStore } from 'redux';
+import reducers from './reducers';
+const store = createStore(reducers);
+```
+
+```angular2
+import { createStore } from 'redux';
+import reducers from './reducers';
+import * as actions from './actions';
+
+const store = createStore(reducers);
+
+console.log(store.getState());
+// store에 변화가 있을때, 실행될 Callback 함수를 등록 시킴.
+const unsubscribe = store.subscribe(() => console.log(store.getState()));
+
+store.dispatch(actions.increment());
+store.dispatch(actions.increment());
+store.dispatch(actions.decrement());
+store.dispatch(actions.setColor([200, 200, 200]));
+
+unsubscribe();
+
+```
+
+### dispatch(action)
+action을 reducer로 보낸다는 것입니다.
+
+- dispatch가 실행되면 store는 reducer에 현재 자신 상태와 방금 전달받은 액션을 전달해 줌.
+- reducer가 어떤 변화가 필요한지 판단하여 변화를 주고 새 상태로 변경함.
+
+### getState()
+현재 상태를 변화하는 함수.
+
+### subscribe(listener)
+상태가 바귈때 마다 실행을 함수를 등록함.
+
+**listener**는 상태가 바뀔때 마다 실행될 Callback 함수임.
+
+### replaceReducer(nextReducer)
+Hot-reloading과 Code Split를 구현할때 사용됨.
+
+
 
 # Manual
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
